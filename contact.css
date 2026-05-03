@@ -1,0 +1,108 @@
+/* Contact Section Background */
+.contact-section {
+    padding: 80px 20px;
+    background-color: #000; /* Matches your dark theme */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+}
+
+/* The Form Card */
+.contact-container {
+    background: #111; /* Slightly lighter than black to stand out */
+    max-width: 600px;
+    width: 100%;
+    padding: 40px;
+    border-radius: 12px;
+    border: 1px solid #333;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    color: white;
+}
+
+.contact-container h2 {
+    text-align: center;
+    color: #fff;
+    margin-bottom: 10px;
+    font-size: 2.5rem;
+}
+
+.contact-container p {
+    text-align: center;
+    color: #aaa;
+    margin-bottom: 30px;
+    font-size: 1rem;
+}
+
+/* Input Fields */
+.form-group {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #ddd;
+}
+
+.form-group input,
+.form-group textarea {
+    padding: 12px 15px;
+    background-color: #222;
+    color: white;
+    border: 1px solid #444;
+    border-radius: 8px;
+    font-size: 16px;
+    font-family: inherit;
+    transition: all 0.3s ease;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #888;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #007BFF; /* Feel free to change to your brand color */
+    background-color: #2a2a2a;
+}
+
+/* Submit Button */
+.submit-btn {
+    width: 100%;
+    padding: 14px;
+    background-color: #007BFF; 
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+    margin-top: 10px;
+}
+
+.submit-btn:hover {
+    background-color: #0056b3;
+}
+
+.submit-btn:disabled {
+    background-color: #555;
+    color: #888;
+    cursor: not-allowed;
+}
+
+/* Success/Error Message Display */
+.form-message {
+    text-align: center;
+    margin-top: 15px;
+    font-weight: 600;
+}
+
+.form-message.success { color: #2ed573; }
+.form-message.error { color: #ff4757; }
+

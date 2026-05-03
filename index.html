@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Fitness Planet</title>
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+    </script>
+</head>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="bmi.css">
+    <link rel="stylesheet" href="navbar.css">
+    <link rel="stylesheet" href="footer.css">
+
+    <link rel="icon" href="pictures/Fitness.png" type="image/x-icon">
+</head>
+
+<body>
+    <video autoplay loop muted src="pictures/bg_video.mp4"></video>
+    <div>
+        <div id="nav"></div>
+
+        <div id="main">
+            <!-- page1 -->
+            <div class="page1">
+                <h1>STAY FOCUSED. STAY FIT.</h1>
+                <h5>WELCOME TO PLANET FITNESS PLANET</h5>
+            </div>
+
+
+
+            <!-- page 2 -->
+            <div id="bmi-section">
+                <div id="calculator">
+                    <div id="inputs">
+                        <h2>BMI Calculator</h2>
+                        <label for="height">Height (cm)</label>
+                        <input type="number" id="height" placeholder="e.g., 170">
+
+                        <label for="weight">Weight (kg)</label>
+                        <input type="number" id="weight" placeholder="e.g., 70">
+
+                        <button id="calculate-btn">Calculate BMI</button>
+
+                        <div id="result">
+                            <div>Your BMI: <span id="bmi-value">--</span></div>
+                            <div>Condition: <span id="condition">--</span></div>
+                        </div>
+                    </div>
+
+                    <div id="gauge">
+                        <div id="gauge-container">
+                            <img src="pictures/bmi.jpeg" alt="BMI Chart">
+                            <div id="needle"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- page 3 -->
+
+            <div class="stack-area" id="program">
+                <div class="left">
+                    <div class="title">Our Features</div>
+                    <div class="sub-title">
+                        Our gym website boosts personalized fitness plans, tailored to individual goals, and an
+                        intuitive
+                        user interface for effortless navigation and workout tracking. Join us to discover your ideal
+                        fitness regime and achieve your health goals with ease!
+                        <br />
+                    </div>
+                </div>
+                <div class="right">
+                    <div class="card">
+                        <div class="sub">Personal Training</div>
+                        <div class="content">Personalized workouts guided by professional trainers.</div>
+                    </div>
+                    <div class="card">
+                        <div class="sub">Group Classes</div>
+                        <div class="content">Collective fitness sessions with guided instruction.</div>
+                    </div>
+                    <div class="card">
+                        <div class="sub">Nutrition Counseling</div>
+                        <div class="content">Expert dietary advice for healthy living.</div>
+                    </div>
+                    <div class="card">
+                        <div class="sub">Yoga</div>
+                        <div class="content">Mind-body practice for balance and flexibility.</div>
+                    </div>
+                </div>
+            </div>
+        </div>    
+            
+       
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+                integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
+                crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+                
+            <!-- make sure to put gsap link before linking script.js -->    
+            <!--gsap cdn is a js library for scrolling animations-->
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"
+                integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg=="
+                crossorigin="anonymous" referrerpolicy="no-referrer"></script> <!-- plugin for gsap-->
+
+            <!-- emailjs     -->
+            <script
+            type="text/javascript"
+            src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+          </script>
+
+<script src="bmi.js"></script>
+
+<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+
+<!-- index.html -->
+<div id="navbar"></div>
+<div id="footer"></div>
+
+<script>
+    fetch('navbar.html')
+    .then(response => response.text())
+    .then(data => {
+        document.getElementById('navbar').innerHTML = data;
+    });
+    </script>
+
+<script>
+    fetch('footer.html')
+    .then(response => response.text())
+    .then(data => {
+        document.getElementById('footer').innerHTML = data;
+
+        // emailjs
+        (function(){
+            emailjs.init({
+            publicKey: "P1s3FI_glKoGLJWiW", 
+            });
+        })();
+
+        const contactForm = document.getElementById('contact-form');
+        const contactEmail = document.getElementById('contact-email');
+
+        const sendEmail = (e) => {
+            e.preventDefault();
+
+            emailjs.sendForm('service_hnomdjb', 'template_dnjzic9', '#contact-form')
+                .then(() => {
+                    alert('Message sent successfully!');
+                    contactEmail.value = '';
+                }, (error) => {
+                    alert('OOPs! SOMETHING HAS FAILED...', error);
+                });
+        };
+
+        if(contactForm) {
+            contactForm.addEventListener('submit', sendEmail);
+        }
+    });
+</script>
+
+
+
+<script src="script.js"></script> 
+</body>
+
+</html>

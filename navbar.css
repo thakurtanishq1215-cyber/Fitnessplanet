@@ -1,0 +1,118 @@
+
+.cursor {
+    height: 25px;
+    width: 25px;
+    background-color: orange;
+    border-radius: 50%;
+    position: fixed;
+    z-index: 99;
+}
+
+.cursor-blur {
+    height: 300px;
+    width: 300px;
+    background-color: orange;
+    border-radius: 50%;
+    position: fixed;
+    z-index: 99;
+}
+
+#nav {
+    height: 100px;
+    width: 100%;
+    background-color: hsla(0, 0%, 0%, 0);
+    filter: progid: DXImageTransform.Microsoft.gradient(startColorstr="#4A4112", endColorstr="#FBE9D7", GradientType=1);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 50px;
+    position: fixed;
+    gap:50px;
+    top: 0; /* Ensure it stays at the top */
+    left: 0;
+    z-index: 1000; /* Ensures it is above everything */
+}
+
+.navb {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-left: 50px;
+    padding-right: 0%;
+}
+
+.navbar img {
+    height: 40px !important; /* Force smaller height */
+    width: 40px !important; /* Force smaller width */
+    padding: 5px !important;
+    margin: 5px !important;
+}
+
+#nav img {
+    height: 120px;
+    width: 120px;
+    border-radius: 10px;
+    padding: 25px;
+    margin: 10px;
+}
+
+#nav h4 {
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+.navbar a {
+    position: relative;
+    font-size: 15px;
+    color: #fff;
+    font-weight: 500;
+    text-decoration: none;
+    margin-left: 40px;
+    transition: all 0.9s;
+    margin-right: 50px;
+}
+
+.navbar a:hover {
+    color: #f6f0f099;
+}
+
+.navbar a::before {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #fff;
+    transition: 0.9s;
+}
+
+.navbar a:hover::before {
+    width: 100%;
+    background-color: #cdc7c7b1;
+}
+
+
+@media (max-width: 768px) {
+    #nav {
+        flex-direction: column;
+        gap: 10px;
+        padding: 10px;
+        height: auto;
+    }
+
+    .navb {
+        flex-direction: column;
+        align-items: center;
+        margin-left: 0;
+    }
+
+    .navbar a {
+        margin: 10px 0;
+    }
+
+    #nav img {
+        height: 100px;
+        width: 100px;
+    }
+}
