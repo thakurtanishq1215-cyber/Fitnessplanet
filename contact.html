@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fitness Planet - Contact Us</title>
+    
+    <!-- Link all your existing stylesheets here -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="navbar.css">
+    <link rel="stylesheet" href="footer.css">
+    
+    <!-- Link the NEW contact form stylesheet -->
+    <link rel="stylesheet" href="contact.css">
+    
+    <link rel="icon" href="pictures/Fitness.png" type="image/x-icon">
+    
+    <!-- EmailJS SDK (Required in the head) -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+</head>
+<body>
+
+    <!-- Dynamic Navbar -->
+    <div id="navbar"></div>
+
+    <!-- Contact Form Section -->
+    <section id="contact" class="contact-section">
+        <div class="contact-container">
+            <h2>Get in Touch</h2>
+            <p>Have a question or want to join Planet Fitness? Send us a message!</p>
+            
+            <form id="contact-form" class="contact-form">
+                <div class="form-group">
+                    <label for="user_name">Full Name</label>
+                    <input type="text" id="user_name" name="user_name" placeholder="Enter your full name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="user_email">Email Address</label>
+                    <input type="email" id="user_email" name="user_email" placeholder="Enter your email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="subject">Subject</label>
+                    <input type="text" id="subject" name="subject" placeholder="What is this regarding?" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">Your Message</label>
+                    <textarea id="message" name="message" rows="5" placeholder="How can we help you?" required></textarea>
+                </div>
+                
+                <button type="submit" id="submit-btn" class="submit-btn">Send Message</button>
+                <div id="form-message" class="form-message"></div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Dynamic Footer -->
+    <div id="footer"></div>
+
+    <!-- Fetch Navbar and Footer Content -->
+    <script>
+        fetch('navbar.html')
+            .then(response => response.text())
+            .then(data => { document.getElementById('navbar').innerHTML = data; });
+
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(data => { document.getElementById('footer').innerHTML = data; });
+    </script>
+
+    <!-- GSAP Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script> 
+
+    <!-- Your Main Javascript File -->
+    <script src="script.js"></script> 
+</body>
+</html>
