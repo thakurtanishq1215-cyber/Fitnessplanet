@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="navbar.css">
+</head>
+<body>
+    
+    <div id="nav">
+        <a href="index.html"><img src="pictures/image_transparent.png" alt="logo"></a>
+        <div class="navb">
+            <h4 class="navbar"><a href="index.html">Home</a></h4>
+            <h4 class="navbar"><a href="index.html#bmi-section">BMI</a></h4>
+            <h4 class="navbar"><a href="about.html">About Us</a></h4>
+            <h4 class="navbar"><a href="signin.html">Sign In</a></h4>
+        </div>
+    </div>
+    <!-- Add GSAP core -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+    integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    
+<!-- make sure to put gsap link before linking script.js -->    
+<!--gsap cdn is a js library for scrolling animations-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"
+    integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script> <!-- plugin for gsap-->
+
+<!-- emailjs     -->
+<script
+type="text/javascript"
+src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
+<!-- Your JS -->
+<script src="navbar.js"></script>
+
+</html>
